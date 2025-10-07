@@ -3,6 +3,16 @@
 Complete observability stack with Elasticsearch, Kibana, Fluent Bit, and Jaeger for logs and distributed tracing.
 
 ## 🚀 Quick Start
+```
+Day-1 https://www.youtube.com/watch?v=otY2_M_pTmU&list=PLdpzxOOAlwvJUIfwmmVDoPYqXXUNbdBmb&index=1
+day-2 https://www.youtube.com/watch?v=OfoQMJJSnUs&list=PLdpzxOOAlwvJUIfwmmVDoPYqXXUNbdBmb&index=3
+Day-3 https://www.youtube.com/watch?v=2IfyyteAc5g&list=PLdpzxOOAlwvJUIfwmmVDoPYqXXUNbdBmb&index=3
+Day-4 https://www.youtube.com/watch?v=uEFwvEw9H9E&list=PLdpzxOOAlwvJUIfwmmVDoPYqXXUNbdBmb&index=4
+Day-5 https://www.youtube.com/watch?v=HGTBANm0VY4&list=PLdpzxOOAlwvJUIfwmmVDoPYqXXUNbdBmb&index=5
+Day-6 https://www.youtube.com/watch?v=U9qInvWTe9w&list=PLdpzxOOAlwvJUIfwmmVDoPYqXXUNbdBmb&index=6
+
+
+```
 
 ### Prerequisites
 - Docker and Docker Compose installed
@@ -122,3 +132,4 @@ Look for `trace_id` and `span_id` fields in your application logs to correlate w
 - Data is persisted in Docker volumes
 - All services run on localhost with different ports
 - Security is disabled for development use only
+
