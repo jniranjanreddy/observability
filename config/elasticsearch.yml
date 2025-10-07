@@ -1,0 +1,22 @@
+# Elasticsearch Configuration
+cluster.name: "logging-cluster"
+node.name: "node-1"
+
+# Use container-appropriate paths
+path.data: /usr/share/elasticsearch/data
+path.logs: /usr/share/elasticsearch/logs
+
+# Network settings
+network.host: 0.0.0.0
+http.port: 9200
+discovery.type: single-node
+
+# Security (for development)
+xpack.security.enabled: false
+xpack.monitoring.collection.enabled: true
+
+# Index settings
+action.auto_create_index: true
+
+# JVM settings
+bootstrap.memory_lock: false

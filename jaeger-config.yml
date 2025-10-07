@@ -1,0 +1,41 @@
+# Jaeger Configuration for Elasticsearch Storage
+# jaeger-config.yml
+
+# Collector configuration
+collector:
+  otlp:
+    grpc:
+      endpoint: 0.0.0.0:4317
+    http:
+      endpoint: 0.0.0.0:4318
+  
+  zipkin:
+    http:
+      endpoint: 0.0.0.0:9411
+
+# Storage configuration
+storage:
+  type: elasticsearch
+  elasticsearch:
+    server-urls: http://elasticsearch:9200
+    num-shards: 1
+    num-replicas: 0
+    index-prefix: jaeger
+    create-index-templates: true
+    version: 7
+    max-span-age: 72h
+    
+# Query service configuration
+query:
+  base-path: /
+  static-files: /go/jaeger-ui/
+  ui-config: /etc/jaeger/ui-config.json
+
+# Agent configuration (if using separate agent)
+agent:
+  jaeger:
+    thrift-compact: 6831
+    thrift-binary: 6832
+    thrift-http: 14268
+  zipkin:
+    thrift: 5775

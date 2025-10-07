@@ -1,0 +1,36 @@
+# Monitoring configuration for the complete stack
+# prometheus.yml for additional monitoring
+
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'fluent-bit'
+    static_configs:
+      - targets: ['localhost:2020']
+    metrics_path: '/api/v1/metrics/prometheus'
+
+  - job_name: 'jaeger'
+    static_configs:
+      - targets: ['localhost:14269']
+    metrics_path: '/metrics'
+
+  - job_name: 'elasticsearch'
+    static_configs:
+      - targets: ['localhost:9200']
+    metrics_path: '/_prometheus/metrics'
+
+  - job_name: 'kibana'
+    static_configs:
+      - targets: ['localhost:5601']
+    metrics_path: '/api/status'
+
+# Alerting rules
+rule_files:
+  - "alert_rules.yml"
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+          - alertmanager:9093

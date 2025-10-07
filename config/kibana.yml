@@ -1,0 +1,28 @@
+# Kibana Configuration
+server.port: 5601
+server.host: "0.0.0.0"
+server.name: "kibana-server"
+
+# Elasticsearch connection
+elasticsearch.hosts: ["http://elasticsearch:9200"]
+
+# Security (for development)
+xpack.security.enabled: false
+xpack.monitoring.ui.container.elasticsearch.enabled: true
+
+# UI Settings
+map.includeElasticMapsService: false
+telemetry.enabled: false
+newsfeed.enabled: false
+
+# Logging - use console only to avoid permission issues
+logging.appenders:
+  default:
+    type: console
+    layout:
+      type: json
+
+logging.root:
+  appenders:
+    - default
+  level: info

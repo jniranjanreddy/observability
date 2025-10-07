@@ -1,0 +1,12 @@
+# Ultra-minimal Kibana Configuration for v8.11.0
+server.port: 5601
+server.host: "0.0.0.0"
+
+# Elasticsearch connection
+elasticsearch.hosts: ["http://elasticsearch:9200"]
+
+# Disable security for development
+xpack.security.enabled: false
+
+# Disable telemetry and other optional features
+telemetry.enabled: false
