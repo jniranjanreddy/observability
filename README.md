@@ -256,3 +256,46 @@ spec:
 
 The ConfigMap provides the [SERVICE], [INPUT], [FILTER], and [OUTPUT] sections discussed earlier.
 ```
+## Data Flow Inside Kubernetes
+
+```
+App Pod → writes to /var/log/containers/
+              │
+Fluent Bit (DaemonSet, on same node)
+              │
+ [INPUT: tail] → [FILTER: kubernetes] → [OUTPUT: es]
+              │
+Elasticsearch (Deployment or external)
+
+```
+## Example Elasticsearch Output (after ingestion)
+```
+{
+  "log": "GET /api/user 200",
+  "kubernetes": {
+    "pod_name": "myapp-7c9d8c5b5b-mgzqj",
+    "namespace_name": "default",
+    "container_name": "myapp",
+    "labels": { "app": "myapp" }
+  },
+  "@timestamp": "2025-10-08T14:12:45.123Z"
+}
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
