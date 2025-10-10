@@ -14,6 +14,11 @@ Day-6 https://www.youtube.com/watch?v=U9qInvWTe9w&list=PLdpzxOOAlwvJUIfwmmVDoPYq
 
 ```
 
+## Opentelemetry
+```
+
+```
+
 ### Prerequisites
 - Docker and Docker Compose installed
 - WSL2 (if on Windows)
@@ -282,6 +287,7 @@ Elasticsearch (Deployment or external)
 }
 
 ```
+
 
 
 
